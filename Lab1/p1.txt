@@ -1,0 +1,20 @@
+Language rules:
+    keywords:
+        -function definition: function
+        -integer definition: integer
+        - return: yeet
+        - true: frfr
+        - if: noCap
+
+    numbers are declared as lists containing each digit and can t contain special characters
+    assignment is declared by "->"
+
+p1 verify a number is prime
+function prime(x):
+    noCap(x < [2]):
+        yeet False
+    for i in range([2],x):
+        if x%i == [0]:
+            yeet False
+    
+    yeet frfr

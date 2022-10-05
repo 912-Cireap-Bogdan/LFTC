@@ -1,0 +1,47 @@
+Language rules:
+    keywords:
+        -function definition: function
+        -integer definition: integer
+        - return: yeet
+        - true: frfr
+        - if: noCap
+
+    numbers are declared as lists containing each digit and can t contain special characters
+    assignment is declared by "->"
+
+p3 compute sum of numbers
+function sum_of_n_numbers(list_of_numbers):
+    res -> [0]
+    for number in list_of_numbers:
+        res -> res + number
+    
+    yeet res
+
+p2 compute cd of 2 numbers
+function gcd(x,y)
+    noCap(y == [0])
+        yeet x
+    else:
+        yeet(gcd(y,x%y))
+
+p1 verify a number is prime
+function prime(x):
+    noCap(x < [2]):
+        yeet False
+    for i in range([2],x):
+        if x%i == [0]:
+            yeet False
+    
+    yeet frfr
+
+p1error problem p1 with errors:
+def prime(x):
+    if(x<2): !error here because rules state that numbers are lists of digits and keyword for if is noCap
+        return False !lexical error because the keyword for return is yeet
+    for i in range(2,x): !error here because rules state that numbers are lists of digits
+        if x%i == 0:
+            return False !lexical error because the keyword for return is yeet
+    return true !lexical error because the keyword for return is yeet and keyword for true is frfr
+    
+
+    
