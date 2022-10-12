@@ -21,7 +21,7 @@ Alphabet:
             -separators [] {} : ; space \n `
             -reserved words:
                 array char const func if else do while read write variable
-                int 
+                int bool char string
         i) identifiers
             identifier ::= letter | letter{letter}{digit}
             letter ::= <A> | <B> | ... | <Z>
