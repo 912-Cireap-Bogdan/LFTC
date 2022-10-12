@@ -1,0 +1,25 @@
+0-9
+A-Z
+a-z
++ - * < > <= >=
+-> 
+< >
+::=
+:=
+BOOL
+CHAR
+REAL 
+COMPLEX
+ARRAY
+READ
+()
+[]
+IF 
+THEN 
+END
+BEGIN
+IDENTIFIER
+WHILE
+DO
+TRUE
+FALSE

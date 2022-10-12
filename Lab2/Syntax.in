@@ -1,0 +1,34 @@
+Syntax:
+
+words- predefined tokes are specified between < and >:
+Syntatical rules:
+
+declaration ::=  type <:> IDENTIFIER
+
+type ::= <BOOL> <CHAR> <INTEGER> <REAL> <COMPLEX>
+
+array_declaration ::= <ARRAY> <[> number <]> <OF> type
+
+expression ::= IDENTIFIER | expression + identifier
+
+I/O_statement ::= <READ> <(> identifier <)>
+
+assignment_statement ::= IDENTIFIER < -> > expression
+
+simple_statement ::= assignment_statement | I/O_statement
+
+structure_statement ::= compound_statement | if_statement | while_statement
+
+statementlist ::= statement | statement <;> statementlist
+
+compound_statement ::= <BEGIN> statementlist <END>
+
+if_statement ::= <IF> cond <THEN> statement <ELSE> nothing | statement
+
+while_statement ::= <WHILE> condition <DO> stmt
+
+relation ::= < < > < = > < <> > < >= > < <= > 
+
+contition ::= expression relation expression
+
+stmt ::= simple_statement | structure_statement

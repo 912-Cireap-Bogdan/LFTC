@@ -1,0 +1,41 @@
+The minilanguage can be a restricted form of a known 
+    programming language, and should contain the following:
+    - 2 simple data types and a user-defined type
+    - statements:
+    - assignment
+    - input/output
+    - conditional
+    - loop
+    - some conditions will be imposed on the way 
+    the identifiers and constants can be formed:
+i) Identifiers: no more than 256 characters
+ii) constants: corresponding to your types
+
+
+Alphabet:
+    a. Upper and lowercase characters: A-Z a-Z
+    b. digits 0-9
+    1.Lexic:
+        a) special symbols representing:
+            -operators: + - * / := -> <-> < > <= >=
+            -separators [] {} : ; space \n `
+            -reserved words:
+                array char const func if else do while read write variable
+                int 
+        i) identifiers
+            identifier ::= letter | letter{letter}{digit}
+            letter ::= <A> | <B> | ... | <Z>
+            digit ::= <0> | <1> | ... | <9>
+
+        ii)constants
+            1. int
+                nonzerodigit ::= digit{nonzerodigit}
+                nonzeroconstt ::= <+> nonzerodigit | <-> nonzerodigit
+            2. char
+                char:='letter'|'digit'
+            3. Bool
+                bool:= <TRUE> | <FALSE>
+            
+            4. string
+                string := char{nonzeroconstt}
+                
