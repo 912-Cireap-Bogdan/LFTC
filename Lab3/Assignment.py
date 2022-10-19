@@ -46,6 +46,7 @@ class hashTable:
             self._table.append([key,data])
             self.current_size +=1
         else:
+            print("index for insert is" + str(index))
             self._table[index] = [key, data]
             self.current_size +=1
 
@@ -80,7 +81,10 @@ class SymbolTable:
 
     def ST_tests(self):
         self.symbolTable.insertData(0,"def")
+        assert(self.symbolTable.findData(0) == [0,'def'])
         self.symbolTable.insertData(0,"function")
+        assert(self.symbolTable.table[-1] == [0,'function'])
+
 
         self.symbolTable.insertData(1,"a")
         self.symbolTable.insertData(2,"b")
@@ -93,6 +97,8 @@ class SymbolTable:
 
         print("removing 0")
         self.symbolTable.removeData(0)
+        assert(self.symbolTable.findData(0) == [0,'function'])
+
         print(self.symbolTable)
 
 if __name__ == "__main__":
