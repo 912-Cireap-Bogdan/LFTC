@@ -1,0 +1,62 @@
+
+
+DOCUMENTATION FOR LAB 3:
+
+CLASS hashTable:
+
+    Properties:
+        1. table - returns the protected field _table containing the data
+
+    Methods:
+        1. __init__
+            -args:
+                -the table
+                -max_size of the table
+                -current size - always starting at 0
+
+        2. check prime:
+            -args a number
+            -returns 1 for prime 0 otherwise
+
+        3. get prime:
+            -args: a number
+            -returns: an increment of 2 based on the non prime numbers untill it
+
+        4. hashFunction:
+            -args: key in hashtble
+            -returns key%capacity, the hashed key where to add something
+
+
+        5. insertData
+            -args: the key,data pair to be inserted
+            -returns: nothing
+            computes the size and increasez the max size of the table based
+            on the need
+            inserts the key,data pair if nothing is there
+            if position is not empty inserts the pair on the last position
+
+        6. removeData
+            -args key
+            -returns: nothing
+            removes data at said key and moves the first occurence of the same key there
+
+        7. findData
+            -args: key
+            -returns: the first occurence of the item at position key
+
+        8. __str__
+            returns string representation of the table
+
+
+
+CLASS SymbolTable
+
+        Methods:
+            1. __init__
+                -initializes hashTable
+                -args:
+                    -size: size to initialize hashTable with
+
+
+            2. ST_tests
+                -some tests to confirm the functionality of the hash table
