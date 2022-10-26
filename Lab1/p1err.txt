@@ -1,17 +1,4 @@
-Language rules:
-    keywords:
-        -function definition: function
-        -integer definition: integer
-        - return: yeet
-        - true: frfr
-        - if: noCap
-
-    numbers are declared as lists containing each digit and can t contain special characters
-    assignment is declared by "->"
-
-
-
-p1error problem p1 with errors:
+"p1error problem p1 with errors"
 def prime(x):
     if(x<2): !error here because rules state that numbers are lists of digits and keyword for if is noCap
         return False !lexical error because the keyword for return is yeet

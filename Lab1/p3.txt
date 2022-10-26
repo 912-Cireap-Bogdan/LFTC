@@ -1,16 +1,4 @@
-Language rules:
-    keywords:
-        -function definition: function
-        -integer definition: integer
-        - return: yeet
-        - true: frfr
-        - if: noCap
-
-    numbers are declared as lists containing each digit and can t contain special characters
-    assignment is declared by "->"
-
-
-p3 compute sum of numbers
+"p3 compute sum of numbers"
 function sum_of_n_numbers(list_of_numbers):
     res -> [0]
     for number in list_of_numbers:

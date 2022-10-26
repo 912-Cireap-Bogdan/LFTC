@@ -1,6 +1,5 @@
 Syntax:
 
-words- predefined tokes are specified between < and >:
 Syntatical rules:
 
 declaration ::=  type <:> IDENTIFIER

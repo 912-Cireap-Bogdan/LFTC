@@ -1,16 +1,4 @@
-Language rules:
-    keywords:
-        -function definition: function
-        -integer definition: integer
-        - return: yeet
-        - true: frfr
-        - if: noCap
-
-    numbers are declared as lists containing each digit and can t contain special characters
-    assignment is declared by "->"
-
-
-p2 compute cd of 2 numbers
+"p2 compute cd of 2 numbers"
 function gcd(x,y)
     noCap(y == [0])
         yeet x
