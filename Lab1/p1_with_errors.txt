@@ -5,5 +5,5 @@ FUNCTION "prime" x
     FOR i -> 2 , i < x , i -> i + 1
         IF x % i := 0
             RETURN FALSE
-    RETURN TRUE
+    RETURN TRUEW
 
