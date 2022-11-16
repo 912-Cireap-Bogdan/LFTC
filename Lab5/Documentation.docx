@@ -1,0 +1,39 @@
+
+
+FINITE AUTOMATA DOCUMENTATION:
+
+    Class FiniteAutomata:
+        -initial fields:
+            self.Q = Q - Finite set of states
+            self.E = E - Set of Input Symbols
+            self.q0 = q0 - Initial State
+            self.F = F - Set of Finl States
+            self.S = S - Transition function
+
+        -methods:
+
+            1. checkDFA:
+                - checks if the FA is a deterministic finite automaton
+                    - checks that for an element in the transition set there are no more than one value per key
+                
+            2. checkAccepted:
+                -starts from initial state and goes down the transition dictionary
+                    - checking if the element is in the final set of states F. if it is then the sequence is checkAccepted
+                    - otherwise go further in the dictionary
+                    - if nothing is found returns false
+           
+            3. readFAFromFile:
+                reads from file finitie automata
+                - see FA.in for example
+            
+
+    Finite automata read from file:
+        Q = A B C
+        E = 0 1
+        q0 = A
+        F = A C
+        S =
+            (A,0) => A
+            (A,1) => C
+            (B,0) => B
+            (C,1) => B

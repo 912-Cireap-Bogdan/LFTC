@@ -16,7 +16,7 @@ class FiniteAutomata:
 
 
     def checkDFA(self):
-        # If |δ(q,a)|≤1 => deterministic finite automaton (DFA)
+        # If |S(q,a)|≤1 => deterministic finite automaton (DFA)
         for key in self.S.keys():
             if len(self.S[key]) > 1:
                 return False
@@ -26,7 +26,26 @@ class FiniteAutomata:
 
     def checkAccepted(self,seq):
         if self.checkDFA():
-            pass
+            
+            element_key = self.q0[0]
+            
+            
+            keys = [element for element in self.S.keys()]
+            print(keys)
+            for i in seq:
+                print(i)
+                print((element_key,i))
+                if (element_key, i) in keys:
+                    print("element key",element_key)
+                    element_key = self.S[(element_key, i)][0]
+                else:
+                    return False
+            
+            if element_key in self.F:
+                return True
+            else:
+                return False
+
 
         return False
 
@@ -38,7 +57,6 @@ class FiniteAutomata:
             self.F = [elem for elem in f.readline().strip().split(' ')[2:]]
             print(self.Q, self.E, self.q0, self.F)
             
-            #empty read to pass emptry row
             f.readline() 
 
             for line in f:
@@ -49,8 +67,8 @@ class FiniteAutomata:
                 destination = aux_string[1].strip()
                 road = aux_elem.strip().split(',')[1]
 
-                print(source ,road, destination)
-                print(self.S)
+                # print(source ,road, destination)
+                # print(self.S)
 
                 if (source, road) in self.S.keys():
                     self.S[(source,road)].append(destination)
