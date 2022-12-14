@@ -32,7 +32,7 @@ class Grammar:
             aux = line[0:-1].split(" ")
             grammar.append(aux)
 
-            #productions where i use $ as the separator
+            #productions where i use | as the separator
             prod = []
             line = f.readline()
 
@@ -54,8 +54,9 @@ class Grammar:
             if p[0] not in dictionary.keys():
                 dictionary[p[0]] = []
 
-            aux = p[1].split("$")
-            dictionary[p[0]].append(aux)
+            aux = p[1].split("|")
+            for item in aux:
+                dictionary[p[0]].append(item)
 
         print("productions dictionary", dictionary)
         return dictionary
@@ -73,7 +74,7 @@ class Grammar:
     def print_prod_for_nonterminal(self,nonterm):
         result = ""
         if nonterm in self.P.keys():
-            result += "The productions for {0} are: \n".format(result)
+            result += "The productions for {0} are: \n".format(nonterm)
             for p in self.P[nonterm]:
                 result += nonterm + '->' + " ".join(p) + '\n'
         else:
@@ -95,9 +96,12 @@ class Grammar:
         return False
 
 
-# g = Grammar()
-# g.print_nonterminals()
-# g.print_terminals()
-# g.print_productions()
-# g.print_prod_for_nonterminal('S')
-# print(g.checkCFG())
+g = Grammar()
+g.print_nonterminals()
+g.print_terminals()
+g.print_productions()
+for nonterminal in g.N:
+    g.print_prod_for_nonterminal(nonterminal)
+
+
+print(g.checkCFG())
