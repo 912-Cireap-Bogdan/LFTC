@@ -1,1 +1,1 @@
-a c b c
+b b c d e $
