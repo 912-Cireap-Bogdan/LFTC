@@ -5,16 +5,11 @@
 
 %token plus
 %token minus
-%token mul
-%token div
-%token mod
 %token assign
 %token equal
 %token notEqual
 %token less
 %token greater
-%token lessOrEqual
-%token greaterOrEqual
 
 %token return
 %token if
