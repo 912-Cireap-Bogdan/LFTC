@@ -1,0 +1,41 @@
+%{
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <string.h>
+    int currLine = 1;
+%}
+
+%option noyywrap
+
+identifier         ^[a-zA-Z][a-zA-Z0-9_]*$
+number             ^(0|[+-]?[1-9][0-9]*)$
+stringCh           \"[^\"]*\"
+
+
+%%
+
+"+"         {printf("Operator: %s\n", yytext);return plus;}
+"-"         {printf("Operator: %s\n", yytext);return minus;}
+"="         {printf("Operator: %s\n", yytext);return assign;}
+":="        {printf("Operator: %s\n", yytext);return equal;}
+"<"         {printf("Operator: %s\n", yytext);return less;}
+">"         {printf("Operator: %s\n", yytext);return greater;}
+
+
+":"         {printf("Separator: %s\n", yytext);return colon;}
+
+
+"true"          {printf("Reserved word: %s\n", yytext);return true;}
+"false"         {printf("Reserved word: %s\n", yytext);return false;}
+"is"            {printf("Reserved word: %s\n", yytext);return is;}
+"return"          {printf("Reserved word: %s\n", yytext);return return;}
+"function"      {printf("Reserved word: %s\n", yytext);return function;}
+"for"           {printf("Reserved word: %s\n", yytext);return function;}
+
+{identifier}        {printf("Identifier: %s\n", yytext);return identifier;}
+{integer}           {printf("Number: %s\n", yytext);return number;}
+{string}            {printf("String: %s\n", yytext);return stringCh;}
+
+[ \t+]          {}
+[\n]+           {currLine++;}
+

@@ -1,0 +1,8 @@
+function "prime" x
+    if x < 2
+        return false
+    for i is 2 , i < x , i is i + 1:
+        if x % i := 0
+            return false
+    return true
+
